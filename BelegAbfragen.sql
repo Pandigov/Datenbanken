@@ -48,7 +48,7 @@ FROM Auftrag
 
 
 --2.1 g)
-SELECT EtPreis*EtAnzLager AS Erlös
+SELECT EtPreis*EtAnzLager AS ErlÃ¶s
 FROM Ersatzteil
 
 
@@ -110,7 +110,7 @@ SELECT MitID,
        MIN(Dauer) AS Minimum, 
        MIN(dauer) AS Maximum, 
 	   ErlDat, 
-       COUNT(AufNr) AS [Aufträge pro Tag]
+       COUNT(AufNr) AS [AuftrÃ¤ge pro Tag]
 FROM Auftrag 
 GROUP BY MitID, ErlDat
 
@@ -137,7 +137,7 @@ SELECT AufNr,
 	   EtBezeichnung, 
 	   Anzahl, 
 	   EtPreis, 
-	   Anzahl*EtPreis as Erlös
+	   Anzahl*EtPreis as ErlÃ¶s
 FROM Montage m
 JOIN Ersatzteil e 
 ON m.EtID= e.EtID
@@ -167,7 +167,7 @@ JOIN Auftrag a
 ON m.AufNr=a.AufNr
 JOIN Ersatzteil e
 ON e.EtID=m.EtID
-WHERE EtBezeichnung = 'Temperaturfühler'
+WHERE EtBezeichnung = 'TemperaturfÃ¼hler'
 
 --2.5 e)
 SELECT a.AufNr,
@@ -305,7 +305,7 @@ HAVING SUM(Anzahl) < EtAnzLager
 
 --2.8 a)
 INSERT INTO Kunde 
-VALUES (1501, 'Munkelt', 'Dresden', '01344', 'Teststraße 29')
+VALUES (1501, 'Munkelt', 'Dresden', '01344', 'TeststraÃŸe 29')
 
 INSERT INTO Auftrag 
 VALUES(5811, 104, 1501, '2022-05-30', '2022-06-03', 1.5, 30,'Beschreibung')
